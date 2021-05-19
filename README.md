@@ -1,2 +1,3 @@
-# react-playground
-⚛️ A playgroud to play with React
+# react-workshop
+
+⚛️ A workshop to get started with React 
