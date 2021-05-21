@@ -2,8 +2,15 @@
   text-align: center;
 }
 
-.Home-header {
-  height: 150px;
-  padding: 20px;
+.Home-title {
+	margin-top: 1rem;
   color: #222;
+}
+
+.Home-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: 1rem;
+	row-gap: 1rem;
+	padding: 1rem;
 }
