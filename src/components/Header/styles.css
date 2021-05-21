@@ -1,0 +1,13 @@
+.Header {
+	background-color: #371351;
+	color: #FFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+}
+
+.Header-logo{
+	height: 40px;
+	width: auto;
+}

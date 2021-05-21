@@ -1,6 +1,8 @@
 # React 101
 
-## Create basic UI with hardcoded data
+## Step 1: Create basic UI with hardcoded data
+
+![](../public/logo-devcamp-2021.png)
 
 ### Goal
 
