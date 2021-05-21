@@ -47,3 +47,9 @@ Product detail
   product_description: '',
 }
 ```
+
+## Figma link
+
+https://www.figma.com/file/GhhUlr2AR3nTUsicx9sOno/DevCamp-2021?node-id=0%3A1
+
+![](../screenshots/02-figma-ui.png)
