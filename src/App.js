@@ -1,12 +1,18 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from './Home';
+import ProductList from './pages/ProductList';
+import TopBar from './components/TopBar';
+import Footer from './components/Footer';
 import './App.css';
 
 const App = () => (
-  <Switch>
-    <Route exact path="/" component={Home} />
-  </Switch>
+  <>
+    <TopBar />
+    <Switch>
+      <Route exact path="/" component={ProductList} />
+    </Switch>
+    <Footer />
+  </>
 );
 
 export default App;
