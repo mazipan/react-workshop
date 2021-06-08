@@ -1,0 +1,16 @@
+.slider {
+  overflow-x: auto;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.slider-item {
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 16px;
+  width: 80px;
+  border: 1px solid #e5e7e9;
+  box-shadow: 0px 1px 6px rgba(49, 53, 59, 0.12);
+  border-radius: 10px;
+  padding: 8px;
+}
