@@ -12,5 +12,6 @@ module.exports = {
     'react/jsx-filename-extension': 0,
     'no-underscore-dangle': 0,
     'react/no-danger': 0,
+    'react/react-in-jsx-scope': 0,
   },
 };
