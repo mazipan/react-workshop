@@ -2,12 +2,10 @@ import React from 'react';
 import './styles.css';
 
 const Footer = () => {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="footer">
       <span>
-        &copy; {year}{' '}
+        &copy; 2021
         <a href="https://academy.tokopedia.com/events/dev-camp" className="footer-link">
           Tokopedia DevCmap
         </a>

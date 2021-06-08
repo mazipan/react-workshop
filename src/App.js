@@ -1,18 +1,15 @@
-import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ProductList from './pages/ProductList';
-import TopBar from './components/TopBar';
-import Footer from './components/Footer';
+import Layout from './components/Layout';
+
 import './App.css';
 
 const App = () => (
-  <>
-    <TopBar />
+  <Layout>
     <Switch>
       <Route exact path="/" component={ProductList} />
     </Switch>
-    <Footer />
-  </>
+  </Layout>
 );
 
 export default App;
