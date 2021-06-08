@@ -13,5 +13,6 @@ module.exports = {
     'no-underscore-dangle': 0,
     'react/no-danger': 0,
     'react/react-in-jsx-scope': 0,
+    'react/forbid-prop-types': 0,
   },
 };
