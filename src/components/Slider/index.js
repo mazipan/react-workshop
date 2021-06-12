@@ -1,15 +1,20 @@
-import { arrayOf, func, string } from 'prop-types';
+import { arrayOf, func, number, string } from 'prop-types';
 import Image from '../Image';
 import './styles.css';
-import mocks from './mocks';
 
 const Slider = (props) => {
-  const { images, onClick } = props;
+  const { activeIndex, images, onClick } = props;
 
   return (
     <div className="slider">
-      {(mocks || images).map((imageUrl) => (
-        <div className="slider-item" onClick={() => onClick(imageUrl)} role="button" aria-hidden>
+      {images.map((imageUrl, index) => (
+        <div
+          className="slider-item"
+          style={{ border: index === activeIndex ? '2px solid #00FFFF' : '' }}
+          onClick={() => onClick(imageUrl)}
+          role="button"
+          aria-hidden
+        >
           <Image src={imageUrl} alt={`product-${imageUrl}`} key={imageUrl} />
         </div>
       ))}
@@ -18,8 +23,9 @@ const Slider = (props) => {
 };
 
 Slider.propTypes = {
-  onClick: func.isRequired,
+  activeIndex: number.isRequired,
   images: arrayOf(string).isRequired,
+  onClick: func.isRequired,
 };
 
 export default Slider;

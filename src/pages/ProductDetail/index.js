@@ -16,6 +16,7 @@ const ProductDetaulQuery = gql`
       product_name
       product_image
       product_description
+      additional_product_image
     }
   }
 `;
@@ -35,6 +36,7 @@ const ProductDetail = () => {
         id: data.ProductDetail.product_id || 0,
         name: data.ProductDetail.product_name || '',
         imageUrl: data.ProductDetail.product_image || '',
+        imageOptsUrl: data.ProductDetail.additional_product_image || [],
         price: data.ProductDetail.product_price_format || '',
         rating: data.ProductDetail.product_rating || '1',
         description: data.ProductDetail.product_description || '',
@@ -50,7 +52,7 @@ const ProductDetail = () => {
         <p>loading...</p>
       ) : (
         <>
-          <Highlight src={product.imageUrl} />
+          <Highlight src={product.imageUrl} srcOpts={product.imageOptsUrl} />
           <ProductInfo title={product.name} rating={product.rating} price={product.price} />
           <ProductDescription description={product.description} />
         </>
