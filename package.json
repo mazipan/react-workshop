@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "razzle start",
-    "build": "razzle build",
+    "build": "razzle build --noninteractive",
     "test": "razzle test --env=jsdom",
     "prod": "NODE_ENV=production node build/server.js"
   },
