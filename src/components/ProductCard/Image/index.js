@@ -20,7 +20,7 @@ const Image = (props) => {
     .replace('ecs7-p.tokopedia.net', 'images.tokopedia.net');
 
   return (
-    <div ref={targetRef}>
+    <div className="image-wrapper" ref={targetRef}>
       {/* Only load the image when the wrapper already viewed on the screen */}
 
       {/* adding .webp, expecting got the webp version */}
