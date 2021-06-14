@@ -17,6 +17,7 @@ const ProductDetaulQuery = gql`
       product_image
       product_description
       additional_product_image
+      rating
     }
   }
 `;
@@ -38,7 +39,7 @@ const ProductDetail = () => {
         imageUrl: data.ProductDetail.product_image || '',
         imageOptsUrl: data.ProductDetail.additional_product_image || [],
         price: data.ProductDetail.product_price_format || '',
-        rating: data.ProductDetail.product_rating || '1',
+        rating: data.ProductDetail.rating || '0',
         description: data.ProductDetail.product_description || '',
       };
     }
