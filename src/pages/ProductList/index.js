@@ -1,28 +1,12 @@
 import { useMemo } from 'react';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { Helmet } from 'react-helmet-async';
 
 import ProductCard from '../../components/ProductCard';
 import Loader from '../../components/ProductCard/Loader';
-import './styles.css';
 
-const ProductListQuery = gql`
-  query GetProductLists($offset: Int, $limit: Int) {
-    ProductLists(offset: $offset, limit: $limit) {
-      data {
-        product_id
-        product_price
-        product_price_format
-        product_name
-        rating
-        product_image
-        product_slug
-      }
-      offset
-      hasNext
-    }
-  }
-`;
+import ProductListQuery from './query.graphql';
+import './styles.css';
 
 const ProductList = () => {
   const { data = {}, loading } = useQuery(ProductListQuery, {

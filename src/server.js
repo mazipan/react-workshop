@@ -46,8 +46,8 @@ server
       </ChunkExtractorManager>
     );
 
-		// ${preloadAssets(razzleAssets, 'client')}
-		// ${cssLinksFromAssets(razzleAssets, 'client')}
+    // ${preloadAssets(razzleAssets, 'client')}
+    // ${cssLinksFromAssets(razzleAssets, 'client')}
 
     if (context.url) {
       res.redirect(context.url);
@@ -72,14 +72,16 @@ server
               <meta name="viewport" content="width=device-width, initial-scale=1" />
               <meta charSet="utf-8" />
 
+							<link rel="preconnect" href="https://images.tokopedia.net" />
+							<link rel="dns-prefetch" href="https://images.tokopedia.net" />
+
 							${helmet.title.toString()}
 							${helmet.meta.toString()}
 							${helmet.link.toString()}
 
 							${linkTags}
 							${styleTags}
-
-            </head>
+					 	</head>
 						<body>
 							${appBody}
 							${scriptTags}

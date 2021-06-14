@@ -1,0 +1,12 @@
+query GetProductLists($productId: Int) {
+  ProductDetail(productId: $productId) {
+    product_id
+    product_price
+    product_price_format
+    product_name
+    product_image
+    product_description
+    additional_product_image
+    rating
+  }
+}
