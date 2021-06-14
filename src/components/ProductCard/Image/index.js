@@ -25,7 +25,7 @@ const Image = (props) => {
 
       {/* adding .webp, expecting got the webp version */}
       {/* please take a note that not all CDN support this kind of approach */}
-      {loaded ? <img className="image" ref={targetRef} alt={alt} src={`${optimizedImage}`} style={style} /> : null}
+      {loaded ? <img className="image-card" ref={targetRef} alt={alt} src={`${optimizedImage}`} style={style} /> : null}
     </div>
   );
 };
