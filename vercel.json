@@ -20,6 +20,14 @@
 			"dest": "build/public/robots.txt"
 		},
 		{
+			"src": "/logo-devcamp-2021.png",
+			"dest": "build/public/logo-devcamp-2021.png"
+		},
+		{
+			"src": "/logo-devcamp-2021.webp",
+			"dest": "build/public/logo-devcamp-2021.webp"
+		},
+		{
 			"src": "/static/(.*)",
 			"dest": "build/public/static/$1"
 		},
