@@ -13,7 +13,8 @@
 	"routes": [
 		{
 			"src": "/favicon.ico",
-			"dest": "build/public/favicon.ico"
+			"dest": "build/public/favicon.ico",
+      "headers": { "Cache-Control": "public, max-age=31556952" }
 		},
 		{
 			"src": "/robots.txt",
@@ -21,57 +22,23 @@
 		},
 		{
 			"src": "/logo-devcamp-2021.png",
-			"dest": "build/public/logo-devcamp-2021.png"
+			"dest": "build/public/logo-devcamp-2021.png",
+      "headers": { "Cache-Control": "public, max-age=31556952" }
 		},
 		{
 			"src": "/logo-devcamp-2021.webp",
-			"dest": "build/public/logo-devcamp-2021.webp"
+			"dest": "build/public/logo-devcamp-2021.webp",
+      "headers": { "Cache-Control": "public, max-age=31556952" }
 		},
 		{
 			"src": "/static/(.*)",
-			"dest": "build/public/static/$1"
+			"dest": "build/public/static/$1",
+      "headers": { "Cache-Control": "public, max-age=86400" }
 		},
 		{
 			"src": "/(.*)",
-			"dest": "build/server.js"
+			"dest": "build/server.js",
+      "headers": { "Cache-Control": "public, max-age=6000" }
 		}
-	],
-	"headers": [
-    {
-      "source": "/(favicon.ico|logo-devcamp-2021.png|logo-devcamp-2021.webp",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        }
-      ]
-    },
-    {
-      "source": "/static/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        }
-      ]
-    },
-    {
-      "source": ".(webp|jpg|jpeg|png|gif|ico|txt|xml|css|js)$",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600"
-        }
-      ]
-    }
-  ]
+	]
 }
