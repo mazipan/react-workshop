@@ -1,0 +1,32 @@
+{
+	"name": "react-workshop",
+	"version": 2,
+	"builds": [
+		{
+			"src": "build/public/**",
+			"use": "@now/static"
+		},
+		{
+			"src": "build/server.js",
+			"use": "@now/node-server"
+		}
+	],
+	"routes": [
+		{
+			"src": "/favicon.ico",
+			"dest": "build/public/favicon.ico"
+		},
+		{
+			"src": "/robots.txt",
+			"dest": "build/public/robots.txt"
+		},
+		{
+			"src": "/static/(.*)",
+			"dest": "build/public/static/$1"
+		},
+		{
+			"src": "/(.*)",
+			"dest": "build/server.js"
+		}
+	]
+}
