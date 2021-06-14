@@ -9,20 +9,36 @@ import { getDataFromTree } from '@apollo/client/react/ssr';
 
 const razzleAssets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
+const preloadAssets = (assets, entrypoint) => {
+  const css = assets[entrypoint]
+    ? assets[entrypoint].css
+      ? assets[entrypoint].css.map((asset) => <link rel="preload" href={asset} as="style" />)
+      : []
+    : [];
+
+  const js = assets[entrypoint]
+    ? assets[entrypoint].js
+      ? assets[entrypoint].js.map((asset) => <link rel="preload" href={asset} as="script" />)
+      : []
+    : [];
+
+  return [].concat(css).concat(js);
+};
+
 const cssLinksFromAssets = (assets, entrypoint) => {
   return assets[entrypoint]
     ? assets[entrypoint].css
       ? assets[entrypoint].css.map((asset) => <link rel="stylesheet" href={asset} />)
-      : ''
-    : '';
+      : []
+    : [];
 };
 
 const jsScriptTagsFromAssets = (assets, entrypoint) => {
   return assets[entrypoint]
     ? assets[entrypoint].js
       ? assets[entrypoint].js.map((asset) => <script src={`${asset}`} defer crossOrigin="true" />)
-      : ''
-    : '';
+      : []
+    : [];
 };
 
 const server = express();
@@ -61,6 +77,8 @@ server
               <meta charSet="utf-8" />
               <title>Welcome to Razzle</title>
               <meta name="viewport" content="width=device-width, initial-scale=1" />
+              {preloadAssets(razzleAssets, 'client')}
+
               {cssLinksFromAssets(razzleAssets, 'client')}
             </head>
             <body>
