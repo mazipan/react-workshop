@@ -20,7 +20,7 @@ const cssLinksFromAssets = (assets, entrypoint) => {
 const jsScriptTagsFromAssets = (assets, entrypoint) => {
   return assets[entrypoint]
     ? assets[entrypoint].js
-      ? assets[entrypoint].js.map((asset) => <script src={`${asset}`} defer crossOrigin />)
+      ? assets[entrypoint].js.map((asset) => <script src={`${asset}`} defer crossOrigin="true" />)
       : ''
     : '';
 };
@@ -58,7 +58,7 @@ server
           <html lang="en">
             <head>
               <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-              <meta charset="utf-8" />
+              <meta charSet="utf-8" />
               <title>Welcome to Razzle</title>
               <meta name="viewport" content="width=device-width, initial-scale=1" />
               {cssLinksFromAssets(razzleAssets, 'client')}

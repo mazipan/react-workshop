@@ -9,6 +9,7 @@ const Slider = (props) => {
     <div className="slider">
       {images.map((imageUrl, index) => (
         <div
+					key={imageUrl}
           className="slider-item"
           style={{ border: index === activeIndex ? '2px solid #00FFFF' : '' }}
           onClick={() => onClick(imageUrl)}

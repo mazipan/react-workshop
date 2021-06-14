@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import ProductCard from '../../components/ProductCard';
+import Loader from '../../components/ProductCard/Loader';
 import './styles.css';
 
 const ProductListQuery = gql`
@@ -27,6 +28,9 @@ const ProductList = () => {
       offset: 0,
       limit: 10,
     },
+    // default is true, so you can remove this actually
+    // just to make you aware of this
+    ssr: true,
   });
 
   const productList = useMemo(() => {
@@ -45,7 +49,11 @@ const ProductList = () => {
   }, [data]);
 
   return loading ? (
-    <p>Loading...</p>
+    <div className="product-list">
+      {[1, 2, 3, 4].map((product) => (
+        <Loader key={product.id} />
+      ))}
+    </div>
   ) : (
     <div className="product-list">
       {productList.map((product) => (
