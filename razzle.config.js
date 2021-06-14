@@ -45,12 +45,14 @@ module.exports = {
               filename: 'framework.[contenthash].js',
               priority: 9,
             },
+
             apollo: {
               test: /node_modules.*(@apollo|graphql)/,
               chunks: 'initial',
               filename: 'apollo.[contenthash].js',
               priority: 9,
             },
+
             vendor: {
               test: /node_modules/,
               chunks: 'initial',
