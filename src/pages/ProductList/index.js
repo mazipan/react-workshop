@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 
 import ProductCard from '../../components/ProductCard';
 import Loader from '../../components/ProductCard/Loader';
-import './styles.css';
+import styles from './styles.css';
 
 const ProductListQuery = gql`
   query GetProductLists($offset: Int, $limit: Int) {
@@ -66,7 +66,7 @@ const ProductList = () => {
   }, [productList]);
 
   return loading ? (
-    <div className="product-list">
+    <div className={styles["product-list"]}>
       {[1, 2, 3, 4].map((idx) => (
         <Loader key={idx} />
       ))}
@@ -76,7 +76,7 @@ const ProductList = () => {
       <Helmet>
         <link rel="preload" href={`${mainImage}`} as="image" />
       </Helmet>
-      <div className="product-list">
+      <div className={styles["product-list"]}>
         {productList.map((product) => (
           <ProductCard to={`${product.id}/${product.slug}`} data={product} key={product.id} />
         ))}
