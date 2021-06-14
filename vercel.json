@@ -35,5 +35,43 @@
 			"src": "/(.*)",
 			"dest": "build/server.js"
 		}
-	]
+	],
+	"headers": [
+    {
+      "source": "/(favicon.ico|logo-devcamp-2021.png|logo-devcamp-2021.webp",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": ".(webp|jpg|jpeg|png|gif|ico|txt|xml|css|js)$",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ]
 }
