@@ -50,8 +50,8 @@ const ProductList = () => {
 
   return loading ? (
     <div className="product-list">
-      {[1, 2, 3, 4].map((product) => (
-        <Loader key={product.id} />
+      {[1, 2, 3, 4].map((idx) => (
+        <Loader key={idx} />
       ))}
     </div>
   ) : (
