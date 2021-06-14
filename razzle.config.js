@@ -30,8 +30,38 @@ module.exports = {
           writeToDisk: { filename },
         }),
       );
-    }
 
+      config.optimization = {
+        runtimeChunk: {
+          name: 'runtime',
+        },
+
+        splitChunks: {
+          maxInitialRequests: 10,
+          cacheGroups: {
+            framework: {
+              test: /node_modules.*(react|react-dom|react-router)/,
+              chunks: 'initial',
+              filename: 'framework.[contenthash].js',
+              priority: 9,
+            },
+            apollo: {
+              test: /node_modules.*(@apollo|graphql)/,
+              chunks: 'initial',
+              filename: 'apollo.[contenthash].js',
+              priority: 9,
+            },
+            vendor: {
+              test: /node_modules/,
+              chunks: 'initial',
+              filename: 'vendor.[contenthash].js',
+            },
+          },
+        },
+
+				minimizer: config.optimization.minimizer
+      };
+    }
 
     return config;
   },
