@@ -1,4 +1,4 @@
-query GetProductLists($offset: Int, $limit: Int) {
+query ProductListQuery($offset: Int, $limit: Int) {
   ProductLists(offset: $offset, limit: $limit) {
     data {
       product_id

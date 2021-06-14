@@ -1,4 +1,4 @@
-query GetProductLists($productId: Int) {
+query ProductDetailQuery($productId: Int) {
   ProductDetail(productId: $productId) {
     product_id
     product_price
