@@ -13,6 +13,7 @@
     "@jackyef/use-intersect": "0.0.6",
     "@loadable/component": "^5.15.0",
     "@loadable/server": "^5.15.0",
+    "@vercel/node": "^1.11.0",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
     "isomorphic-unfetch": "3.1.0",
