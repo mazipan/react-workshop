@@ -1,31 +1,18 @@
 import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 import './styles.css';
 import Highlight from '../../compositions/Highlight/index';
 import ProductInfo from '../../components/ProductInfo';
 import ProductDescription from '../../components/ProductDescription';
+import ProductDetailQuery from './query.graphql';
 
-const ProductDetaulQuery = gql`
-  query GetProductLists($productId: Int) {
-    ProductDetail(productId: $productId) {
-      product_id
-      product_price
-      product_price_format
-      product_name
-      product_image
-      product_description
-      additional_product_image
-      rating
-    }
-  }
-`;
 
 const ProductDetail = () => {
   const { id } = useParams();
 
-  const { data = {}, loading } = useQuery(ProductDetaulQuery, {
+  const { data = {}, loading } = useQuery(ProductDetailQuery, {
     variables: {
       productId: Number(id),
     },

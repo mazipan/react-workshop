@@ -1,0 +1,44 @@
+{
+	"version": 2,
+	"builds": [
+		{
+			"src": "build/public/**",
+			"use": "@vercel/static"
+		},
+		{
+			"src": "build/server.js",
+			"use": "@vercel/node"
+		}
+	],
+	"routes": [
+		{
+			"src": "/favicon.ico",
+			"dest": "build/public/favicon.ico",
+      "headers": { "Cache-Control": "public, max-age=31556952" }
+		},
+		{
+			"src": "/robots.txt",
+			"dest": "build/public/robots.txt"
+		},
+		{
+			"src": "/logo-devcamp-2021.png",
+			"dest": "build/public/logo-devcamp-2021.png",
+      "headers": { "Cache-Control": "public, max-age=31556952" }
+		},
+		{
+			"src": "/logo-devcamp-2021.webp",
+			"dest": "build/public/logo-devcamp-2021.webp",
+      "headers": { "Cache-Control": "public, max-age=31556952" }
+		},
+		{
+			"src": "/static/(.*)",
+			"dest": "build/public/static/$1",
+      "headers": { "Cache-Control": "public, max-age=86400" }
+		},
+		{
+			"src": "/(.*)",
+			"dest": "build/server.js",
+      "headers": { "Cache-Control": "public, max-age=6000" }
+		}
+	]
+}

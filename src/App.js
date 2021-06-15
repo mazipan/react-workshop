@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
-import ProductDetail from './pages/ProductDetail';
-import ProductList from './pages/ProductList';
+import ProductDetail from './pages/ProductDetail/Lazy';
+import ProductList from './pages/ProductList/Lazy';
 import Layout from './components/Layout';
 
 import './App.css';

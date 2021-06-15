@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { string, shape, number, objectOf } from 'prop-types';
 import RatingStar from '../RatingStar';
-import Image from '../Image';
+import Image from './Image';
 import './styles.css';
 
 const ProductCard = (props) => {
