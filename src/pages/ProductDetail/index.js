@@ -7,8 +7,8 @@ import './styles.css';
 import Highlight from '../../compositions/Highlight/index';
 import ProductInfo from '../../components/ProductInfo';
 import ProductDescription from '../../components/ProductDescription';
+import JSONSchema from './JSONSchema';
 import ProductDetailQuery from './query.graphql';
-
 
 const ProductDetail = () => {
   const { id, slug } = useParams();
@@ -49,6 +49,7 @@ const ProductDetail = () => {
           <Highlight src={product.imageUrl} srcOpts={product.imageOptsUrl} />
           <ProductInfo title={product.name} rating={product.rating} price={product.price} />
           <ProductDescription description={product.description} />
+          <JSONSchema id={id} slug={slug} description={product.description} price={product.price} title={product.name} />
         </>
       )}
     </div>
