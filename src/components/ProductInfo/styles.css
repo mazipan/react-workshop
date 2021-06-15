@@ -1,0 +1,29 @@
+.product-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-info-price {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.product-info-rating {
+  display: flex;
+  align-items: center;
+}
+
+.product-info-rating-text {
+  margin-left: 8px;
+  font-size: 24px;
+  color: rgba(49, 53, 59, 0.68);
+  font-weight: normal;
+}
+
+.product-info-title {
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(49, 53, 59, 0.96);
+  font-weight: normal;
+}

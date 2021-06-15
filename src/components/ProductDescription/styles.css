@@ -1,0 +1,16 @@
+.product-description {
+  border: 1px solid #e5e7e9;
+  border-radius: 10px;
+  box-shadow: 0px 1px 6px rgba(49, 53, 59, 0.12);
+  padding: 12px;
+}
+
+.product-description-title {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.product-description-text {
+  line-height: 14px;
+  color: rgba(49, 53, 59, 0.68);
+}

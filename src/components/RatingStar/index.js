@@ -10,11 +10,11 @@ const createRatingArray = (rating = 0) => {
 };
 
 const RatingStar = (props) => {
-  const { rating } = props;
+  const { rating, width, height } = props;
   const ratings = createRatingArray(parseInt(rating, 10));
 
   return ratings.map((r) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" key={r}>
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 16 16" key={r}>
       <g fill="none">
         <path d="M0 0h16v16H0z" />
         <path
@@ -28,6 +28,13 @@ const RatingStar = (props) => {
 
 RatingStar.propTypes = {
   rating: string.isRequired,
+  width: string,
+  height: string,
+};
+
+RatingStar.defaultProps = {
+  width: '16',
+  height: '16',
 };
 
 export default RatingStar;

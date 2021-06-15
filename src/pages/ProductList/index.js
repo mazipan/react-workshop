@@ -49,7 +49,7 @@ const ProductList = () => {
   ) : (
     <div className="product-list">
       {productList.map((product) => (
-        <ProductCard to={product.slug} data={product} key={product.id} />
+        <ProductCard to={`${product.id}/${product.slug}`} data={product} key={product.id} />
       ))}
     </div>
   );
