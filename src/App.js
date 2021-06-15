@@ -1,12 +1,15 @@
-import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from './Home';
+import ProductList from './pages/ProductList';
+import Layout from './components/Layout';
+
 import './App.css';
 
 const App = () => (
-  <Switch>
-    <Route exact path="/" component={Home} />
-  </Switch>
+  <Layout>
+    <Switch>
+      <Route exact path="/" component={ProductList} />
+    </Switch>
+  </Layout>
 );
 
 export default App;
