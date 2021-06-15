@@ -6,7 +6,9 @@ function Header() {
   return (
     <header className="header">
       <Link to="/" className="header-link">
-        <img className="header-logo" src="/logo-devcamp-2021.webp" alt="Tokopedia DevCamp 2021" />
+        <h1>
+          <img className="header-logo" src="/logo-devcamp-2021.webp" alt="Tokopedia DevCamp 2021" />
+        </h1>
       </Link>
     </header>
   );
