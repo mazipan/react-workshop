@@ -11,7 +11,7 @@ import ProductDetailQuery from './query.graphql';
 
 
 const ProductDetail = () => {
-  const { id } = useParams();
+  const { id, slug } = useParams();
 
   const { data = {}, loading } = useQuery(ProductDetailQuery, {
     variables: {
@@ -44,6 +44,7 @@ const ProductDetail = () => {
           <Helmet>
             <title>{product.name}</title>
             <meta name="description" content={product.description} />
+            <link rel="canonical" href={`http://localhost:3000/${id}/${slug}`} />
           </Helmet>
           <Highlight src={product.imageUrl} srcOpts={product.imageOptsUrl} />
           <ProductInfo title={product.name} rating={product.rating} price={product.price} />
