@@ -14,17 +14,19 @@
 - React.js
 - Apollo
 
-## Installation
-
-- Click "Use this template" to create your own repo
-
-![](screenshots/01-use-template.png)
+## Checkout
 
 - Clone the repo to your local
 
 ```bash
 $ git clone git@github.com:mazipan/react-workshop.git
 ```
+
+- Or click "Use this template" to create your own repo
+
+![](screenshots/01-use-template.png)
+
+## Installation
 
 - Move to the project's directory
 
