@@ -8,6 +8,7 @@ import Highlight from '../../compositions/Highlight/index';
 import ProductInfo from '../../components/ProductInfo';
 import ProductDescription from '../../components/ProductDescription';
 import JSONSchema from './JSONSchema';
+import OpenGraph from './OpenGraph';
 import ProductDetailQuery from './query.graphql';
 
 const ProductDetail = () => {
@@ -50,6 +51,7 @@ const ProductDetail = () => {
           <Highlight src={product.imageUrl} srcOpts={product.imageOptsUrl} />
           <ProductInfo title={product.name} rating={product.rating} price={product.price} />
           <ProductDescription description={product.description} />
+          <OpenGraph id={id} slug={slug} imageUrl={product.imageUrl} description={product.description} title={product.name} />
           <JSONSchema id={id} slug={slug} imageUrl={product.imageUrl} description={product.description} price={product.priceNumber} title={product.name} />
         </>
       )}
