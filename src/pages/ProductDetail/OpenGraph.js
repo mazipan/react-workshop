@@ -7,14 +7,14 @@ const OpenGraph = ({ title, description, id, slug, imageUrl }) => {
 
   return (
     <Helmet>
-      // Open Graph / Facebook
+      {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={productUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageUrl} />
 
-      // Twitter
+      {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={productUrl} />
       <meta property="twitter:title" content={title} />
