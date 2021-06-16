@@ -78,7 +78,6 @@ server
 							${helmet.title.toString()}
 							${helmet.meta.toString()}
 							${helmet.link.toString()}
-							${helmet.link.toString()}
 
 							${linkTags}
 							${styleTags}
