@@ -8,7 +8,7 @@ const ProductInfo = (props) => {
   return (
     <>
       <div className="product-info">
-        <h1 className="product-info-price">{price}</h1>
+        <h2 className="product-info-price">{price}</h2>
         <div className="product-info-rating">
           <RatingStar rating="1" width="26" height="26" />
           <p className="product-info-rating-text">({rating})</p>

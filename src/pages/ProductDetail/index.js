@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import { Helmet } from 'react-helmet-async';
 
 import './styles.css';
 import Highlight from '../../compositions/Highlight/index';
@@ -10,7 +11,7 @@ import ProductDetailQuery from './query.graphql';
 
 
 const ProductDetail = () => {
-  const { id } = useParams();
+  const { id, slug } = useParams();
 
   const { data = {}, loading } = useQuery(ProductDetailQuery, {
     variables: {
@@ -40,6 +41,11 @@ const ProductDetail = () => {
         <p>loading...</p>
       ) : (
         <>
+          <Helmet>
+            <title>{product.name}</title>
+            <meta name="description" content={product.description} />
+            <link rel="canonical" href={`http://localhost:3000/${id}/${slug}`} />
+          </Helmet>
           <Highlight src={product.imageUrl} srcOpts={product.imageOptsUrl} />
           <ProductInfo title={product.name} rating={product.rating} price={product.price} />
           <ProductDescription description={product.description} />
