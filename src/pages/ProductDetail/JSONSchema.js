@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'; 
-import { string } from "prop-types";
+import { number, string, arrayOf } from "prop-types";
 
-const ProductSchema = ({ id, slug, title, description, price }) => {
+const ProductSchema = ({ id, slug, title, description, price, imageUrl }) => {
 
   return (
     <Helmet>
@@ -11,20 +11,10 @@ const ProductSchema = ({ id, slug, title, description, price }) => {
             "@context": "https://schema.org/",
             "@type": "Product",
             "name": "${title}",
-            "image": [
-              "https://example.com/photos/1x1/photo.jpg",
-              "https://example.com/photos/4x3/photo.jpg",
-              "https://example.com/photos/16x9/photo.jpg"
-            ],
+            "sku": "${id}",
+            "mpn": "${id}",
+            "image": ["${imageUrl}"],
             "description": "${description}",
-            "review": {
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "4",
-                "bestRating": "5"
-              }
-            },
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.4",
@@ -32,8 +22,9 @@ const ProductSchema = ({ id, slug, title, description, price }) => {
             },
             "offers": {
               "@type": "Offer",
-              "url": "https://localhost:3000/${id}/${slug}",
+              "url": "https://www.tokopedia.com/${id}/${slug}",
               "priceCurrency": "IDR",
+              "priceValidUntil": "2022-12-12",
               "price": "${price}",
               "itemCondition": "https://schema.org/UsedCondition",
               "availability": "https://schema.org/InStock"
@@ -46,11 +37,12 @@ const ProductSchema = ({ id, slug, title, description, price }) => {
 }
 
 ProductSchema.propTypes = {
-  price: string.isRequired,
+  price: number.isRequired,
   title: string.isRequired,
   id: string.isRequired,
   slug: string.isRequired,
   description: string.isRequired,
+  imageUrl: string.isRequired,
 };
 
 export default ProductSchema;

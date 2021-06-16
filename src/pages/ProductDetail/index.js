@@ -27,6 +27,7 @@ const ProductDetail = () => {
         imageUrl: data.ProductDetail.product_image || '',
         imageOptsUrl: data.ProductDetail.additional_product_image || [],
         price: data.ProductDetail.product_price_format || '',
+        priceNumber: data.ProductDetail.product_price || 0,
         rating: data.ProductDetail.rating || '0',
         description: data.ProductDetail.product_description || '',
       };
@@ -49,7 +50,7 @@ const ProductDetail = () => {
           <Highlight src={product.imageUrl} srcOpts={product.imageOptsUrl} />
           <ProductInfo title={product.name} rating={product.rating} price={product.price} />
           <ProductDescription description={product.description} />
-          <JSONSchema id={id} slug={slug} description={product.description} price={product.price} title={product.name} />
+          <JSONSchema id={id} slug={slug} imageUrl={product.imageUrl} description={product.description} price={product.priceNumber} title={product.name} />
         </>
       )}
     </div>
