@@ -234,6 +234,7 @@ const ampPDP = async (req, res) => {
     </footer>
   `;
 
+  // TODO: create JSON schema
   const ampHtml = `
     ${topBar}
     <div class="product-detail">
@@ -250,6 +251,7 @@ const ampPDP = async (req, res) => {
     <head>
       <meta charset="utf-8">
       <title>${ProductDetail.product_name}</title>
+      <meta name="description" content="${ProductDetail.product_description}" />
       <script async src="https://cdn.ampproject.org/v0.js"></script>
       <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
       <link rel="canonical" href="${req.protocol}://${req.get('host')}${req.url.replace('/amp', '')}">
