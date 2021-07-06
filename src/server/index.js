@@ -7,16 +7,19 @@ import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server';
 // Read the doc on https://github.com/staylor/react-helmet-async
 import { HelmetProvider } from 'react-helmet-async';
 import express from 'express';
-import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
+import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache, gql } from '@apollo/client';
 import { getDataFromTree } from '@apollo/client/react/ssr';
 
-import App from './App';
+import App from '../App';
+
+import ampPDP from './ampPDP';
 
 const server = express();
 
 server
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
+  .get('/amp/:id/:slug', ampPDP)
   .get('/*', (req, res) => {
     const extractor = new ChunkExtractor({
       statsFile: path.resolve('build/loadable-stats.json'),

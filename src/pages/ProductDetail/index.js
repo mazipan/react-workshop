@@ -46,7 +46,8 @@ const ProductDetail = () => {
           <Helmet>
             <title>{product.name}</title>
             <meta name="description" content={product.description} />
-            <link rel="canonical" href={`http://localhost:3000/${id}/${slug}`} />
+            <link rel="canonical" href={`https://devcamp-react.vercel.app/${id}/${slug}`} />
+            <link rel="amphtml" href={`https://devcamp-react.vercel.app/amp/${id}/${slug}`} />
           </Helmet>
           <Highlight src={product.imageUrl} srcOpts={product.imageOptsUrl} />
           <ProductInfo title={product.name} rating={product.rating} price={product.price} />
