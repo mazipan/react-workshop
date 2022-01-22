@@ -2,7 +2,7 @@
 
 ⚛️ A workshop to get started with React
 
-## Scope of workshop today
+## Scope of workshop today for testing purposes
 
 - React 101 + Graphql
 - Web Performance
